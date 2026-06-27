@@ -1,0 +1,17 @@
+# IoT-SC1 Dependencies
+# Core cipher requires Python 3.10+ only (no external deps)
+# Optional packages for enhanced functionality:
+
+# Benchmarking charts (optional)
+matplotlib>=3.7.0
+
+# Alternative crypto for comparison benchmarks (optional — one of:)
+pycryptodome>=3.20.0
+# cryptography>=41.0.0
+
+# For running tests
+# unittest is included in Python standard library
+
+# For thesis report generation (optional)
+# reportlab>=4.0.0
+# fpdf2>=2.7.0

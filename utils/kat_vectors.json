@@ -1,0 +1,109 @@
+{
+  "cipher": "IoT-SC1",
+  "version": "1.0.0",
+  "generated": "2026-06-27T17:19:23Z",
+  "key_size": 128,
+  "iv_size": 64,
+  "vectors": [
+    {
+      "description": "All-zero key, all-zero IV, all-zero PT (16B)",
+      "key": "00000000000000000000000000000000",
+      "iv": "0000000000000000",
+      "plaintext": "00000000000000000000000000000000",
+      "ciphertext": "cdc251b4de261048ed61078fd91375fb",
+      "mac_tag": "c388f741",
+      "pt_len": 16,
+      "ct_len": 16
+    },
+    {
+      "description": "All-ones key, all-ones IV, all-ones PT (16B)",
+      "key": "ffffffffffffffffffffffffffffffff",
+      "iv": "ffffffffffffffff",
+      "plaintext": "ffffffffffffffff",
+      "ciphertext": "323dae4b21d9efb7",
+      "mac_tag": "4a6dac4b",
+      "pt_len": 8,
+      "ct_len": 8
+    },
+    {
+      "description": "Standard test vector \u2014 'Hello IoT-SC1!'",
+      "key": "0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+      "iv": "a1b2c3d4e5f6a7b8",
+      "plaintext": "48656c6c6f20496f542d53433121",
+      "ciphertext": "c2c11fe0ca6b73a80b9dfb3ec026",
+      "mac_tag": "0cfb4e93",
+      "pt_len": 14,
+      "ct_len": 14
+    },
+    {
+      "description": "Incremental key & IV, zero PT (32B)",
+      "key": "000102030405060708090a0b0c0d0e0f",
+      "iv": "0001020304050607",
+      "plaintext": "0000000000000000000000000000000000000000000000000000000000000000",
+      "ciphertext": "c45eb6a94ee6609fe96305fb9a375fb9ae7bfd92e2b1d4232c154639ce566993",
+      "mac_tag": "d6f73217",
+      "pt_len": 32,
+      "ct_len": 32
+    },
+    {
+      "description": "Random-looking key, sensor data PT",
+      "key": "deadbeefcafebabe0123456789abcdef",
+      "iv": "0102030405060708",
+      "plaintext": "7b2274656d70223a33382e372c2268756d223a36312e327d",
+      "ciphertext": "4a76c7b0763d106b87e6052a6ec3dcab4b3272dc5626bfdf",
+      "mac_tag": "3ef324e3",
+      "pt_len": 24,
+      "ct_len": 24
+    },
+    {
+      "description": "Single byte PT",
+      "key": "0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+      "iv": "a1b2c3d4e5f6a7b8",
+      "plaintext": "ff",
+      "ciphertext": "75",
+      "mac_tag": "5a778fb9",
+      "pt_len": 1,
+      "ct_len": 1
+    },
+    {
+      "description": "Empty PT",
+      "key": "0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+      "iv": "a1b2c3d4e5f6a7b8",
+      "plaintext": "",
+      "ciphertext": "",
+      "mac_tag": "00000000",
+      "pt_len": 0,
+      "ct_len": 0
+    },
+    {
+      "description": "256-byte PT (keystream uniformity)",
+      "key": "aabbccddeeff00112233445566778899",
+      "iv": "aabbccddeeff0011",
+      "plaintext": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+      "ciphertext": "6f01fd0afa03ff99e3639de3b6a97d8abb5c2042a0c63a025e20d94e77872a4196816dca4a23dfb4cd4fba14754e2bd9a00e6b5d32c5a9d75034c839bdea1615543fc9ee06a7f495696d6967500875859402eef6126c980c32cdb4e0f61ab6e5c412eecf215eaca037d0c41d9cf5830e74ffa969339ac6d80881708c73fdd60271850c5899c7673050a39df3062af10633ed6e06af5f52c4243cd1a15bc5233dd220758c84bddc53ab250fed9c62fec7bd43b3346b9ca8cc422e550212cb4e2029afc4335c28a7c04014d8ba481ee2da96e11a8eb6d45204fdc297e98d6a06f2f2936032c3cac6f8911aef1076d9b05959b217956dcbad9d6f164a548503f502",
+      "mac_tag": "41e3a854",
+      "pt_len": 256,
+      "ct_len": 256
+    },
+    {
+      "description": "IV = all-zeros, key = alternating nibbles",
+      "key": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "iv": "0000000000000000",
+      "plaintext": "3547204e422d496f54207061796c6f61642074657374",
+      "ciphertext": "c144ace2071683a80b99d3148ff55c3402b04b351c74",
+      "mac_tag": "8a929631",
+      "pt_len": 22,
+      "ct_len": 22
+    },
+    {
+      "description": "Max-length typical IoT frame (64B)",
+      "key": "0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+      "iv": "fedcba9876543210",
+      "plaintext": "abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab",
+      "ciphertext": "270eed9265f0c63a4f1570b1ef451001ec43110fd52d02e540c63a4c1371bfd52d02e54dcb3346caaf2877beed9b64f2c5a056394a1f7887b7ee9d6b63f1cca4",
+      "mac_tag": "e9c16d54",
+      "pt_len": 64,
+      "ct_len": 64
+    }
+  ]
+}
