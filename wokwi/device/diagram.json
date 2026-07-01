@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "author": "IoT-SC1 Thesis",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-v1",
+      "id": "esp",
+      "top": 180,
+      "left": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 60,
+      "left": 480,
+      "attrs": { "temperature": "26.5", "humidity": "63.0" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_green",
+      "top": 180,
+      "left": 500,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_red",
+      "top": 240,
+      "left": 500,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_blue",
+      "top": 300,
+      "left": 500,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 180,
+      "left": 590,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 240,
+      "left": 590,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 300,
+      "left": 590,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX",  "$serialMonitor:RX", "", [] ],
+    [ "esp:RX",  "$serialMonitor:TX", "", [] ],
+
+    [ "dht1:VCC", "esp:3V3",    "red",   [ "h10", "v0" ] ],
+    [ "dht1:SDA", "esp:D15",    "green", [ "h10", "v0" ] ],
+    [ "dht1:GND", "esp:GND.1",  "black", [ "h10", "v0" ] ],
+
+    [ "led_green:A", "r1:1",    "green", [] ],
+    [ "r1:2",   "esp:D2",       "green", [] ],
+    [ "led_green:K", "esp:GND.2","black",[] ],
+
+    [ "led_red:A",   "r2:1",    "red",   [] ],
+    [ "r2:2",   "esp:D4",       "red",   [] ],
+    [ "led_red:K",   "esp:GND.3","black", [] ],
+
+    [ "led_blue:A",  "r3:1",    "blue",  [] ],
+    [ "r3:2",   "esp:D5",       "blue",  [] ],
+    [ "led_blue:K",  "esp:GND.4","black", [] ]
+  ],
+  "serialMonitor": {
+    "display": "terminal",
+    "newline": "lf"
+  }
+}
+    [ "r2:2",   "esp:D4",      "red",   [] ],
+    [ "led_red:K",   "esp:GND.4", "black", [] ],
+
+    [ "led_blue:A",  "r3:1",   "blue",  [] ],
+    [ "r3:2",   "esp:D5",      "blue",  [] ],
+    [ "led_blue:K",  "esp:GND.5", "black", [] ]
+  ],
+  "serialMonitor": {
+    "display": "terminal",
+    "newline": "lf"
+  }
+}

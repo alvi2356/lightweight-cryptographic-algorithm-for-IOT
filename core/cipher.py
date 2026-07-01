@@ -1,7 +1,6 @@
 """
 IoT-SC1: Lightweight Stream Cipher for IoT and 5G Networks
 ==========================================================
-Author      : aaurélyn / Tech Nexus LTD
 Algorithm   : Fibonacci LFSR + NLFSR + multi-byte XOR mixing + 4×4 S-box
 Key size    : 128 bits (16 bytes)
 IV size     : 64 bits  (8 bytes)

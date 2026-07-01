@@ -1,17 +1,44 @@
-# IoT-SC1 Dependencies
-# Core cipher requires Python 3.10+ only (no external deps)
-# Optional packages for enhanced functionality:
+# IoT-SC1 — Python Dependencies
+# ================================
+# Install all with:
+#   pip install -r requirements.txt
+#
+# Python 3.10+ required
+# tkinter is included with Python (no pip install needed)
 
-# Benchmarking charts (optional)
-matplotlib>=3.7.0
+# ── Core cipher ───────────────────────────────────────────────
+# core/cipher.py uses stdlib only: hashlib, hmac, typing
+# NO external dependencies required for the cipher itself
 
-# Alternative crypto for comparison benchmarks (optional — one of:)
-pycryptodome>=3.20.0
-# cryptography>=41.0.0
+# ── UI (ui.py) ────────────────────────────────────────────────
+# tkinter   — built into Python, no install needed
+# threading, time, struct, json, math, random, os, sys — stdlib
 
-# For running tests
-# unittest is included in Python standard library
+# ── Statistical tests (analysis/statistical_tests.py) ─────────
+# math, struct, collections, typing — stdlib only
+# NO external dependencies
 
-# For thesis report generation (optional)
-# reportlab>=4.0.0
-# fpdf2>=2.7.0
+# ── Security analysis (analysis/security_analysis.py) ─────────
+# math, itertools — stdlib only
+# NO external dependencies
+
+# ── Benchmark comparison (benchmarks/benchmark.py) ────────────
+# Required for AES / ChaCha20 comparison benchmarks:
+pycryptodome==3.21.0
+
+# ── Visualizer (utils/visualizer.py) ──────────────────────────
+# Required for PNG keystream visualization and benchmark charts:
+matplotlib==3.9.4
+numpy==2.2.3
+
+# ── simulate_visual.py ────────────────────────────────────────
+# stdlib only: time, struct, json, hashlib, os, sys, math, random
+# NO external dependencies
+
+# ── Tests (tests/test_cipher.py) ──────────────────────────────
+# unittest — stdlib only
+# NO external dependencies
+
+# ── Optional: alternative crypto library for benchmarks ───────
+# Uncomment if pycryptodome is not available:
+# cryptography==44.0.2
